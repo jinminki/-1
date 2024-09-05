@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GANGFORM SMART MONITORING</title>
+    <link rel="stylesheet" href="3경고창.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <!-- SONGJIN 텍스트와 링크를 삭제했습니다. -->
+        </div>
+        <div class="box warning">
+            갱폼안전인양시스템 경고창
+        </div>
+        <!-- 데이터 표를 자유롭게 위치시키기 위한 영역 -->
+        <div class="data-list-container">
+            <table id="data-list" class="data-table">
+                <thead>
+                    <tr>
+                        <th id="date-header">날짜▽</th>
+                        <th>시간</th>
+                        <th id="zone-header">구역🔍︎</th>
+                        <th>점검 사유</th>
+                        <th>진행 상태</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 동적으로 생성된 데이터가 여기에 추가됩니다. -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- 데이터 수정 모달 -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <form id="edit-form">
+                <label for="edit-date">날짜:</label>
+                <input type="text" id="edit-date" name="date" required><br>
+                <label for="edit-time">시간:</label>
+                <input type="text" id="edit-time" name="time" required><br>
+                <label for="edit-zone">구역:</label>
+                <input type="text" id="edit-zone" name="zone" required><br>
+                <label for="edit-reason">점검 사유:</label>
+                <input type="text" id="edit-reason" name="reason" required><br>
+                <label for="edit-status">진행 상태:</label>
+                <input type="text" id="edit-status" name="status" required><br>
+                <button type="submit"><span>저장</span></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 데이터 추가 모달 -->
+    <div id="add-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <form id="add-form">
+                <label for="add-date">날짜:</label>
+                <input type="text" id="add-date" name="date" required><br>
+                <label for="add-time">시간:</label>
+                <input type="text" id="add-time" name="time" required><br>
+                <label for="add-zone">구역:</label>
+                <input type="text" id="add-zone" name="zone" required><br>
+                <label for="add-reason">점검 사유:</label>
+                <input type="text" id="add-reason" name="reason" required><br>
+                <label for="add-status">진행 상태:</label>
+                <input type="text" id="add-status" name="status" required><br>
+                <button type="submit"><span>추가</span></button>
+            </form>
+        </div>
+    </div>
+
+    <script src="3경고창.js"></script>
+</body>
+</html>

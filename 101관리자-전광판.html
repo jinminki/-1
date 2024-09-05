@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GANGFORM SMART MONITORING</title>
+    <link rel="stylesheet" href="101관리자-전광판.css">
+    <style>
+        /* 경고(깜빡임) 애니메이션 */
+        @keyframes blink {
+            50% {
+                background-color: red;
+                color: white;
+            }
+        }
+
+        /* 경고 클래스 추가 */
+        .alert {
+            animation: blink 1s infinite;
+        }
+
+        /* 위치 정보 확인 관련 스타일 */
+        .location-box {
+            font-size: 18px;
+            color: blue;
+            margin-top: 20px;
+        }
+        .error-box {
+            color: red;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <!-- SONGJIN 텍스트를 삭제 -->
+        </div>
+        <div class="box upper-control clickable">
+            하부 출입통제구역 화면
+        </div>
+        <div class="box indoor-control clickable">
+            실내 출입통제구역 화면
+        </div>
+        <div class="box CCTV clickable">
+            CCTV 화면
+        </div>
+        <div class="box information clickable">
+            구역 정보 / 공정 정보
+        </div>
+        <div class="box next-information clickable">
+            다음 공정 구역 정보 / 공정 정보 / 출입통제시간 정보 /
+        </div>
+        <div class="box Lower-access-control clickable" id="lower-access-control">
+            하부 출입통제
+            <div class="time-display">
+                <input type="text" class="time-input" style="display: none;">
+                <span class="time-text">00:00 ~ 00:00</span>
+                <button class="confirm-button" style="display: none;">완료</button>
+            </div>
+        </div>        
+        <div class="box Indoor-access-control clickable">
+            실내 출입통제
+            <div class="time-display">
+                <input type="text" class="time-input" style="display: none;">
+                <span class="time-text">00:00 ~ 00:00</span>
+                <button class="confirm-button" style="display: none;">완료</button>
+            </div>
+        </div>
+        <div class="box tower-crane clickable">
+            타워크레인 CH 정보
+        </div>
+    </div>
+
+    <!-- 위치 정보 출력 -->
+    <div id="location" class="location-box">위치 정보를 가져오는 중...</div>
+    <div id="error" class="error-box"></div>
+
+    <!-- 모달 창 -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <label for="towerCraneText">타워크레인 CH 정보:</label>
+            <input type="text" id="towerCraneText" class="modal-input">
+            <label for="cctvUrl">CCTV URL:</label>
+            <input type="text" id="cctvUrl" class="modal-input">
+            <button id="saveButton" class="modal-button">저장</button>
+        </div>
+    </div>
+
+    <!-- 기존 전광판 스크립트 -->
+    <script src="101관리자-전광판.js"></script>
+
+    <!-- GPS 추적 스크립트 -->
+    <script src="gps-tracking.js"></script>
+
+    <!-- 위치 정보 확인 스크립트 추가 -->
+    <script>
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                function(position) {
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+                    document.getElementById('location').textContent = `위도: ${latitude}, 경도: ${longitude}`;
+                },
+                function(error) {
+                    let errorMessage = '';
+                    switch (error.code) {
+                        case error.PERMISSION_DENIED:
+                            errorMessage = "위치 정보 제공이 거부되었습니다.";
+                            break;
+                        case error.POSITION_UNAVAILABLE:
+                            errorMessage = "위치 정보를 사용할 수 없습니다.";
+                            break;
+                        case error.TIMEOUT:
+                            errorMessage = "위치 정보 요청이 시간 초과되었습니다.";
+                            break;
+                        default:
+                            errorMessage = "알 수 없는 오류가 발생했습니다.";
+                    }
+                    document.getElementById('error').textContent = errorMessage;
+                },
+                {
+                    enableHighAccuracy: true,
+                    maximumAge: 0,
+                    timeout: 10000
+                }
+            );
+        } else {
+            document.getElementById('error').textContent = "이 브라우저는 위치 정보를 지원하지 않습니다.";
+        }
+    </script>
+
+</body>
+</html>

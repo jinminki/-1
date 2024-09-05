@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GANGFORM SMART MONITORING</title>
+    <link rel="stylesheet" href="2관리자-메인화면.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><a href="2관리자-메인화면.html">SONGJIN</a></h1>
+        </div>
+        <div class="box site-information">
+            현장 정보
+        </div>
+        <div class="box warning">
+            갱폼안전인양시스템 경고창
+        </div>
+        <div class="box Setting-zone">
+            구역<br>수정
+        </div>
+        <div class="box Add-zone">
+            +
+        </div>
+        <div class="box Deleted-zone">
+            -
+        </div>
+        <div class="box Display-preview">
+            전광판<br>설정
+        </div>
+        <!-- 구역 박스들은 JavaScript로 동적으로 생성됩니다. -->
+    </div>
+
+    <!-- 구역 추가 모달 -->
+    <div id="addZoneModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>새 구역 추가</h2>
+            <input type="text" id="zoneName" placeholder="구역 이름">
+            <input type="text" id="zoneFloor" placeholder="층수">
+            <input type="text" id="zoneDetail" placeholder="공정 현황">
+            <button id="addZoneButton">추가</button>
+        </div>
+    </div>
+
+    <script src="2관리자-메인화면.js"></script>
+</body>
+</html>

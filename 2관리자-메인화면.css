@@ -1,0 +1,220 @@
+@font-face {
+    font-family: abster;
+    src: url(font/abster-webfont.woff) format('woff');
+}
+
+@font-face {
+    font-family: nanumgothic;
+    src: url(font/nanumgothic-webfont.woff) format('woff');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: #C6C6C6;
+    position: relative;
+}
+
+.container .header {
+    width: 80%;
+    height: 80px;
+    position: absolute;
+    top: 15px;
+    left: 50px;
+}
+
+.container .header h1 a {
+    text-decoration: none;
+    color: black;
+    font-family: abster;
+    transition: color 0.3s;
+}
+
+.container .header h1 a:hover {
+    color: #707070; /* 변경된 색상 */
+}
+
+body {
+    font-family: nanumgothic;
+    font-weight: bold;
+}
+
+.box {
+    position: absolute;
+    background-color: #B0B0B0;
+    color: black;
+    padding: 20px;
+    border-radius: 3px;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.box:hover {
+    color: #707070; /* 변경된 색상 */
+}
+
+.site-information {
+    width: 440px;
+    height: 60px;
+    top: 70px;
+    left: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: default;
+    transition: none;
+    background-color: #B0B0B0;
+    color: black;
+    font-size: 20px;
+}
+
+.warning {
+    width: 440px;
+    height: 60px;
+    top: 70px;
+    left: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #B0B0B0;
+    color: black;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.warning:hover {
+    color: #707070; /* 변경된 색상 */
+}
+
+.Setting-zone {
+    width: 102.5px;
+    height: 60px;
+    top: 70px;
+    left: 950px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #B0B0B0;
+    color: black;
+}
+
+.Add-zone {
+    width: 102.5px;
+    height: 60px;
+    top: 70px;
+    left: 1062px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 30px;
+    background-color: #B0B0B0;
+    color: black;
+}
+
+.Deleted-zone {
+    width: 102.5px;
+    height: 60px;
+    top: 70px;
+    left: 1176px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 40px;
+    background-color: #B0B0B0;
+    color: black;
+}
+
+.Display-preview {
+    width: 102.5px;
+    height: 60px;
+    top: 70px;
+    left: 1287px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #B0B0B0;
+    color: black;
+}
+
+.zone-box {
+    width: 215px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #B0B0B0;
+    color: black;
+    transition: color 0.3s;
+}
+
+.zone-box:hover {
+    color: #707070; /* 변경된 색상 */
+}
+
+@keyframes text-blink {
+    0% { color: black; }
+    50% { color: #1fdfdf; }
+    100% { color: black; }
+}
+
+.blinking-text {
+    animation: text-blink 1s infinite;
+}
+
+@keyframes dark-blue-blink {
+    0% { color: black; }
+    50% { color: #003366; }
+    100% { color: black; }
+}
+
+.dark-blue-blinking-text {
+    animation: dark-blue-blink 1s infinite;
+}
+
+@keyframes red-blink {
+    0% { color: black; }
+    50% { color: #b30000; }
+    100% { color: black; }
+}
+
+.red-blinking-text {
+    animation: red-blink 1s infinite;
+}
+
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background-color: #fefefe;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    padding: 20px;
+    display: none;
+}
+
+.modal-content {
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}

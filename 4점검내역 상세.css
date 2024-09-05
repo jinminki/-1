@@ -1,0 +1,133 @@
+@font-face {
+    font-family: abster;
+    src: url(font/abster-webfont.woff) format('woff');
+}
+
+@font-face {
+    font-family: nanumgothic;
+    src: url(font/nanumgothic-webfont.woff) format('woff'); /* 나눔고딕 폰트 경로 수정 */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: nanumgothic; /* 기본 폰트를 나눔고딕으로 설정 */
+    font-weight: bold; /* 기본 폰트를 볼드체로 설정 */
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: #C6C6C6; /* 배경색을 #C6C6C6으로 설정 */
+}
+
+.container .header {
+    width: 80%;
+    height: 80px;
+    position: absolute;
+    top: 15px;
+    left: 40px;
+}
+
+.box {
+    position: absolute;
+    background-color: #B0B0B0; /* 박스의 배경색을 #B0B0B0으로 설정 */
+    color: black; /* 텍스트 색상을 블랙으로 변경 */
+    padding: 20px;
+    border-radius: 3px;
+}
+
+/* 점검 상세 정보 박스 스타일 */
+.Inspection-details {
+    width: 793px;
+    height: 50px;
+    top: 5px;
+    left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #B0B0B0; /* 배경색을 #B0B0B0으로 설정 */
+    color: black; /* 텍스트 색상을 블랙으로 변경 */
+    font-family: nanumgothic; /* 폰트를 나눔고딕으로 설정 */
+    font-weight: bold; /* 텍스트를 볼드체로 설정 */
+}
+
+/* 구역 정보 박스 스타일 */
+.Zone-Information {
+    width: 793px;
+    height: 50px;
+    top: 60px;
+    left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: row; /* 가로로 정렬 */
+    gap: 40px; /* 항목 간의 간격 조정 */
+    background-color: #B0B0B0; /* 배경색을 #B0B0B0으로 설정 */
+    color: black; /* 텍스트 색상을 블랙으로 변경 */
+    font-family: nanumgothic; /* 폰트를 나눔고딕으로 설정 */
+    font-weight: bold; /* 텍스트를 볼드체로 설정 */
+}
+
+/* 점검 상세 리포트 박스 스타일 */
+.Inspection-details-report {
+    width: 793px;
+    height: 445px;
+    top: 115px;
+    left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #B0B0B0; /* 배경색을 #B0B0B0으로 설정 */
+    color: black; /* 텍스트 색상을 블랙으로 변경 */
+    font-family: nanumgothic; /* 폰트를 나눔고딕으로 설정 */
+    font-weight: bold; /* 텍스트를 볼드체로 설정 */
+}
+
+/* 점검 완료 박스 스타일 */
+.Inspection-completed {
+    width: 395px;
+    height: 40px;
+    top: 565px;
+    left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #B0B0B0; /* 배경색을 #B0B0B0으로 설정 */
+    color: black; /* 기본 텍스트 색상 블랙으로 변경 */
+    transition: color 0.3s; /* 색상 변경 시 애니메이션 추가 */
+    font-family: nanumgothic; /* 폰트를 나눔고딕으로 설정 */
+    font-weight: bold; /* 텍스트를 볼드체로 설정 */
+}
+
+/* 점검 완료 박스에 마우스 오버 시 텍스트 색상 변경 */
+.Inspection-completed:hover {
+    color: #707070; /* 마우스 오버 시 텍스트 색상 변경 */
+}
+
+/* 점검 미완료 박스 스타일 */
+.Inspection-not-completed {
+    width: 395px;
+    height: 40px;
+    top: 565px;
+    left: 405px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #B0B0B0; /* 배경색을 #B0B0B0으로 설정 */
+    color: black; /* 기본 텍스트 색상 블랙으로 변경 */
+    transition: color 0.3s; /* 색상 변경 시 애니메이션 추가 */
+    font-family: nanumgothic; /* 폰트를 나눔고딕으로 설정 */
+    font-weight: bold; /* 텍스트를 볼드체로 설정 */
+}
+
+/* 점검 미완료 박스에 마우스 오버 시 텍스트 색상 변경 */
+.Inspection-not-completed:hover {
+    color: #707070; /* 마우스 오버 시 텍스트 색상 변경 */
+}
